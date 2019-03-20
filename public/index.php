@@ -11,6 +11,7 @@ if (PHP_SAPI == 'cli-server') {
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../src/config/db.php';
+require __DIR__ . '/../src/config/jwt.php';
 
 session_start();
 
@@ -25,7 +26,10 @@ require __DIR__ . '/../src/dependencies.php';
 require __DIR__ . '/../src/middleware.php';
 
 // Register routes
+/** Routes para Productos */
 require __DIR__ . '/../src/routes.php';
+require __DIR__ . '/../src/routes_user.php';
+require __DIR__ . '/../src/routes_productores.php';
 
 // Run app
 $app->run();
